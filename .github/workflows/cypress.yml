@@ -18,4 +18,6 @@ jobs:
           working-directory: e2e-tests
           wait-on: http://localhost:8080
           wait-on-timeout: 120
-      - run: docker-compose -f examples/docker/docker-compose_default.yaml down --volumes --remove-orphans
+      - name: Cleanup docker
+        run: docker-compose -f examples/docker/docker-compose_default.yaml down --volumes --remove-orphans
+        if: always()
