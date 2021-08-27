@@ -8,7 +8,7 @@ describe("Authentication", () => {
       cy.get('input[name="username"]').clear().type('user1')
       cy.get('input[name="password"]').clear().type('password')
       cy.get('input[type="submit"]').click()
-      cy.contains("You are logged in!")
+      cy.contains("You are NOT logged in!")
     })
   
     it('should show a warning on wrong credetials', () => {
