@@ -10,6 +10,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          start: docker-compose -f examples/docker/docker-compose_https.yaml up -d
+          start: docker-compose -f ./examples/docker/docker-compose_https.yaml up -d
           working-directory: e2e-tests
           wait-on: http://localhost:8080
+          wait-on-timeout: 120
